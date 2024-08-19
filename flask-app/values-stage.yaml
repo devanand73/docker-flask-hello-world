@@ -1,0 +1,4 @@
+appName: stage-flask-app
+namespace: stage
+hostname: staging.my-inc.com
+ingressPort: 32766

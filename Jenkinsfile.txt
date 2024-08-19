@@ -1,0 +1,38 @@
+Jenkins pipeline file
+
+pending tasks:
+1. fix helm prod deploy test case issue
+2.enable parameterised build
+3.set environment path for kubeconfig file and use it within pipeline script.
+4.clean up pipeline script.
+=================================================
+
+node {
+
+    stage("Git Clone"){
+
+     git 'https://github.com/devanand73/docker-flask-hello-world.git'
+
+    }
+
+     
+    stage("Docker build"){
+        
+         bat 'docker build -t flask-helloworld:2.0 .'
+         bat 'docker tag flask-helloworld:2.0 devanand73/flask-helloworld:2.0'
+    }
+
+     stage("Docker Hub Login") {
+        bat 'docker login -u devanand73 -p Dev@1973'
+    }
+
+    stage("Push Image to Docker Hub"){
+        bat 'docker push  devanand73/flask-helloworld:2.0'
+    }
+    
+    
+    stage("Deploy Heml chart"){
+        
+         bat 'kubectl --kubeconfig=c:/users/devar/.kube/config get ns'
+         bat 'helm --kubeconfig=c:/users/devar/.kube/config install flask-app-prod flask-app/ -f flask-app/values-prod.yaml -n prod'     }
+}

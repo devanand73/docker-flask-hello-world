@@ -1,0 +1,7 @@
+appName: flask-app # can be referenced in deployment,service etc templates
+namespace: default
+image:
+  name: devanand73/flask-helloworld
+  tag: latest
+hostname: my-inc.com #Domain-name usually referenced in the Ingress configuration to route traffic to the application
+ingressPort: 32765 #port that will be used for ingress (external access) to the application. 
