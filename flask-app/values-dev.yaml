@@ -2,3 +2,5 @@ appName: dev-flask-app
 namespace: dev
 hostname: development.my-inc.com
 ingressPort: 32763
+serviceAccount:
+  create: false
