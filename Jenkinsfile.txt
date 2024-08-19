@@ -1,12 +1,3 @@
-Jenkins pipeline file
-
-pending tasks:
-1. fix helm prod deploy test case issue
-2.enable parameterised build
-3.set environment path for kubeconfig file and use it within pipeline script.
-4.clean up pipeline script.
-=================================================
-
 node {
 
     stage("Git Clone"){
