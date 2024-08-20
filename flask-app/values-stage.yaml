@@ -2,3 +2,12 @@ appName: stage-flask-app
 namespace: stage
 hostname: staging.my-inc.com
 ingressPort: 32766
+serviceAccount:
+  create: false
+service:
+  port: 80
+  type: ClusterIP  # Include this for consistency
+ingress:
+  enabled: false
+autoscaling:
+  enabled: false
