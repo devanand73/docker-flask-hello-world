@@ -6,6 +6,7 @@ serviceAccount:
   create: false
 service:
   port: 80
+  type: ClusterIP 
 ingress:
   enabled: false  # Add this section
 autoscaling:
