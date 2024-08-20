@@ -7,3 +7,5 @@ hostname: my-inc.com #Domain-name usually referenced in the Ingress configuratio
 ingressPort: 32765 #port that will be used for ingress (external access) to the application. 
 serviceAccount:
   create: false
+service:
+  port: 80  
