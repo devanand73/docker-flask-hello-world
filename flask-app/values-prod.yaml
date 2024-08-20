@@ -6,7 +6,7 @@ serviceAccount:
   create: false
 service:
   port: 80
-  type: ClusterIP  # Ensure this is included
+  type: NodePort  # Ensure this is included
 ingress:
   enabled: false  # Include this if ingress is not needed
 autoscaling:
