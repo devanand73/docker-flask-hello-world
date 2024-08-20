@@ -6,3 +6,7 @@ serviceAccount:
   create: false
 service:
   port: 80
+ingress:
+  enabled: false  # Add this section
+autoscaling:
+  enabled: false  # Add this section  
